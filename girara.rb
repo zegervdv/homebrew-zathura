@@ -23,7 +23,7 @@ class Girara < Formula
 
   def install
     # Set HOMBREW_PREFIX
-    ENV['DESTDIR'] = prefix
+    ENV['PREFIX'] = prefix
 
     system "make"
     system "make install"
