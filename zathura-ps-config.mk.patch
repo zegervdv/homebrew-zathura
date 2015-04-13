@@ -1,0 +1,12 @@
+--- config.mk	2013-05-12 23:29:11.000000000 +0200
++++ patch-config.mk	2015-04-13 16:18:14.000000000 +0200
+@@ -40,6 +40,9 @@
+ # flags
+ CFLAGS += -std=c99 -fPIC -pedantic -Wall -Wno-format-zero-length $(INCS)
+ 
++# linker flags
++LDFLAGS += -fPIC -fno-common
++
+ # debug
+ DFLAGS ?= -g
+ 
