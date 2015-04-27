@@ -16,10 +16,10 @@ class Girara < Formula
 
   # Patch the makefile for OS X clang
   # Replaces -soname flag with -install_name
-  patch :p0 do
-    url 'https://github.com/zegervdv/homebrew-zathura/raw/master/girara_Makefile.patch'
-    sha1 '9f004fb607c0b2a4dd9888ff2f4703b60cc17852'
-  end
+  # patch :p0 do
+  #   url 'https://github.com/zegervdv/homebrew-zathura/raw/master/girara_Makefile.patch'
+  #   sha1 '9f004fb607c0b2a4dd9888ff2f4703b60cc17852'
+  # end
 
   def install
     # Set HOMBREW_PREFIX
