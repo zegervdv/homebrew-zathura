@@ -7,6 +7,7 @@ class Girara < Formula
   url "https://pwmt.org/projects/girara/download/girara-0.2.4.tar.gz"
   sha1 "bc51914d42f210e580305b32facc912a13eba9fd"
   version "0.2.4"
+  revision '1'
 
   # depends_on "cmake" => :build
   depends_on :x11 # if your formula requires any X11/XQuartz components
@@ -14,14 +15,10 @@ class Girara < Formula
   depends_on 'gtk+3'
   depends_on 'gettext'
 
-  # Patch the makefile for OS X clang
-  # Replaces -soname flag with -install_name
-  # patch :p0 do
-  #   url 'https://github.com/zegervdv/homebrew-zathura/raw/master/girara_Makefile.patch'
-  #   sha1 '9f004fb607c0b2a4dd9888ff2f4703b60cc17852'
-  # end
-
   def install
+    inreplace "girara/utils.c" do |s|
+      s.gsub! /xdg-open/, "open"
+    end
     # Set HOMBREW_PREFIX
     ENV['PREFIX'] = prefix
 
