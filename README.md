@@ -4,7 +4,7 @@ Homebrew formulae to install zathura and plugins on Mac OS X
 
 ## Installation
 Tap the repository:
-```brew tap zegervdv/homebrew-zathura```
+```brew tap zegervdv/zathura```
 
 Install zathura and required plugins
 ```
