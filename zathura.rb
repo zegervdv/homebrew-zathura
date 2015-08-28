@@ -14,6 +14,7 @@ class Zathura < Formula
   depends_on "libmagic"
   depends_on "gettext"
   depends_on "girara"
+  depends_on "gnome-icon-theme"
 
   def install
     # Set Homebrew prefix
