@@ -1,0 +1,15 @@
+*** zathura/main.c	2015-12-24 14:12:51.000000000 +0100
+--- zathura/main_patched.c	2015-12-24 14:12:48.000000000 +0100
+*************** main(int argc, char* argv[])
+*** 135,144 ****
+    gchar* plugin_path    = NULL;
+    gchar* loglevel       = NULL;
+    gchar* password       = NULL;
+- #ifdef WITH_SYNCTEX
+    gchar* synctex_editor = NULL;
+    gchar* synctex_fwd    = NULL;
+- #endif
+    gchar* mode           = NULL;
+    bool forkback         = false;
+    bool print_version    = false;
+--- 135,142 ----
