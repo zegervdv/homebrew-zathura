@@ -4,9 +4,9 @@
 
 class Girara < Formula
   homepage "https://pwmt.org/projects/girara/"
-  url "https://pwmt.org/projects/girara/download/girara-0.2.5.tar.gz"
-  sha1 "45a6b3fece67a10c44409c776946dc412f41bfaa"
-  version "0.2.5"
+  url "https://pwmt.org/projects/girara/download/girara-0.2.6.tar.gz"
+  sha1 "674e4294fe091fe93a1c186d95b3263b30cd8a5e"
+  version "0.2.6"
 
   # depends_on "cmake" => :build
   depends_on :x11 # if your formula requires any X11/XQuartz components
