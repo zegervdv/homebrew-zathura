@@ -6,7 +6,7 @@ class ZathuraPs < Formula
   homepage "https://pwmt.org/projects/zathura-ps/"
   url "https://pwmt.org/projects/zathura-ps/download/zathura-ps-0.2.2.tar.gz"
   version "0.2.2"
-  sha1 "35340171aa7dab6d2bed8a1b94a68ff5ee76e2eb"
+  sha256 "35340171aa7dab6d2bed8a1b94a68ff5ee76e2eb"
 
   depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on 'zathura'
@@ -14,12 +14,12 @@ class ZathuraPs < Formula
 
   patch :p0 do
     url 'https://github.com/zegervdv/homebrew-zathura/raw/master/zathura-ps-Makefile.patch'
-    sha1 '8c0ddb9b7e709376c437b0283306cc1f7c0f5b9a'
+    sha256 '8c0ddb9b7e709376c437b0283306cc1f7c0f5b9a'
   end
 
   patch :p0 do
     url 'https://github.com/zegervdv/homebrew-zathura/raw/master/zathura-ps-config.mk.patch'
-    sha1 '2303727d83fca7446d1d20825d22ca3e5b899dc0'
+    sha256 '2303727d83fca7446d1d20825d22ca3e5b899dc0'
   end
 
   def install
