@@ -4,9 +4,9 @@
 
 class Zathura < Formula
   homepage "https://pwmt.org/projects/zathura/"
-  url "https://pwmt.org/projects/zathura/download/zathura-0.3.6.tar.gz"
-  version "0.3.6"
-  sha256 "086a8be25d538fc6539fbee8f01ecf16d25819dfaad50cd2dbd84e30152ccb3b"
+  url "https://pwmt.org/projects/zathura/download/zathura-0.3.7.tar.gz"
+  version "0.3.7"
+  sha256 "22afff89f4093f22fb82188417ff9bfa9695b19a4fe894dca05b7c821b390ff0"
 
   # depends_on "cmake" => :build
   depends_on :x11 # if your formula requires any X11/XQuartz components
@@ -19,10 +19,10 @@ class Zathura < Formula
   depends_on "desktop-file-utils"
   depends_on "intltool"
 
-  patch :p0 do
-    url 'https://github.com/zegervdv/homebrew-zathura/raw/1efa3c89cd454cac88729c7334f9ee46e254b299/zathura.h.patch'
-    sha256 '07c3948280cbe4f757c6c86761845a637092a4e433f53be28362bec3f7fe4237'
-  end
+  # patch :p0 do
+  #   url 'https://github.com/zegervdv/homebrew-zathura/raw/1efa3c89cd454cac88729c7334f9ee46e254b299/zathura.h.patch'
+  #   sha256 '07c3948280cbe4f757c6c86761845a637092a4e433f53be28362bec3f7fe4237'
+  # end
 
 
   def install
