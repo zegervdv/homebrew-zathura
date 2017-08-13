@@ -18,6 +18,7 @@ class Zathura < Formula
   depends_on "glib"
   depends_on "desktop-file-utils"
   depends_on "intltool"
+  depends_on "synctex" => :optional
 
   # patch :p0 do
   #   url 'https://github.com/zegervdv/homebrew-zathura/raw/1efa3c89cd454cac88729c7334f9ee46e254b299/zathura.h.patch'
