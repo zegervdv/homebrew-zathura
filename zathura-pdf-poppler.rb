@@ -4,9 +4,9 @@
 
 class ZathuraPdfPoppler < Formula
   homepage "https://pwmt.org/projects/zathura-pdf-poppler/"
-  url "https://pwmt.org/projects/zathura-pdf-poppler/download/zathura-pdf-poppler-0.2.7.tar.gz"
-  version "0.2.7"
-  sha256 "985e4e4dce6143fdfd246e78b0ccbef0d32b8809c6a4f08bb53a2f7dfbd383c0"
+  url "https://pwmt.org/projects/zathura-pdf-poppler/download/zathura-pdf-poppler-0.2.5.tar.gz"
+  version "0.2.5"
+  sha256 "60b327596d65bcd39edd5bf05b8cca8f9b658f51e626611ea99247a49b860cac"
 
   depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on 'zathura'
@@ -14,15 +14,15 @@ class ZathuraPdfPoppler < Formula
   depends_on 'pkg-config'
 
   # Apply patches from http://stackoverflow.com/a/29460237
-  # patch :p0 do
-  #   url "https://raw.githubusercontent.com/zegervdv/homebrew-zathura/master/zathura-pdf-poppler-config.mk.diff"
-  #   sha256 "7acaaeeb5e75bf7cff864a850fc763d17a6a34dcbd3e11487d4d04a2904c8f49"
-  # end
+  patch :p0 do
+    url "https://raw.githubusercontent.com/zegervdv/homebrew-zathura/master/zathura-pdf-poppler-config.mk.diff"
+    sha256 "7acaaeeb5e75bf7cff864a850fc763d17a6a34dcbd3e11487d4d04a2904c8f49"
+  end
 
-  # patch :p0 do
-  #   url "https://raw.githubusercontent.com/zegervdv/homebrew-zathura/master/zathura-pdf-poppler-Makefile.diff"
-  #   sha256 "a3ee7155707028806e1abb9e4bdf88bfc7bd71cebd10e6ac741285b8e26b0e05"
-  # end
+  patch :p0 do
+    url "https://raw.githubusercontent.com/zegervdv/homebrew-zathura/master/zathura-pdf-poppler-Makefile.diff"
+    sha256 "a3ee7155707028806e1abb9e4bdf88bfc7bd71cebd10e6ac741285b8e26b0e05"
+  end
 
   def install
     inreplace "Makefile", /\$\{PREFIX\}\/bin\/zathura/, "#{Formula['zathura'].prefix}/bin/zathura"
