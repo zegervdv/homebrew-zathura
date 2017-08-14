@@ -27,11 +27,12 @@ class ZathuraPdfPoppler < Formula
   def install
     inreplace "Makefile", /\$\{PREFIX\}\/bin\/zathura/, "#{Formula['zathura'].prefix}/bin/zathura"
     ENV['PREFIX'] = prefix
+    ENV['PLUGINDIR'] = lib
     system "make"
     system "make install"
 
     # Rename pdf.dylib to pdf.so to make it work
-    mv "#{Formula['zathura'].prefix}/lib/zathura/pdf.dylib", "#{Formula['zathura'].prefix}/lib/zathura/pdf.so"
+    # mv "#{Formula['zathura'].prefix}/lib/zathura/pdf.dylib", "#{Formula['zathura'].prefix}/lib/zathura/pdf.so"
   end
 
   test do
