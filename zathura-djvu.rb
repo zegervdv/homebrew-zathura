@@ -28,8 +28,20 @@ class ZathuraDjvu < Formula
     # Replace it in the makefile
     inreplace "Makefile", /\$\{PREFIX\}\/bin\/zathura/, "#{Formula['zathura'].prefix}/bin/zathura"
     ENV['PREFIX'] = prefix
+    ENV['PLUGINDIR'] = lib
     system "make", "install" # if this fails, try separate make/make install steps
-    mv Formula['zathura'].lib/"zathura/djvu.dylib", Formula['zathura'].lib/"zathura/djvu.so"
+  end
+
+  def caveats
+    <<-EOS.undent
+      To enable this plugin you will need to link it in place.
+      First create the plugin directory if it does not exist yet:
+        $ mkdir -p $(brew --prefix zathura)/lib/zathura
+      Then link the .dylib to the directory:
+        $ ln -s $(brew --prefix zathura-djvu)/lib/djvu.dylib $(brew --prefix zathura)/lib/zathura/djvu.so
+
+      More information as to why this is needed: https://github.com/zegervdv/homebrew-zathura/issues/19
+    EOS
   end
 
   test do

@@ -25,11 +25,22 @@ class ZathuraPs < Formula
   def install
     ENV['PREFIX'] = prefix
     ENV['ZATHURA_BIN'] = Formula['zathura'].bin
+    ENV['PLUGINDIR'] = lib
     system "make"
     system "make install"
 
-    # Rename dylib to so
-    mv Formula['zathura'].lib/"zathura/ps.dylib", Formula['zathura'].lib/"zathura/ps.so"
+  end
+
+  def caveats
+    <<-EOS.undent
+      To enable this plugin you will need to link it in place.
+      First create the plugin directory if it does not exist yet:
+        $ mkdir -p $(brew --prefix zathura)/lib/zathura
+      Then link the .dylib to the directory:
+        $ ln -s $(brew --prefix zathura-ps)/lib/ps.dylib $(brew --prefix zathura)/lib/zathura/ps.so
+
+      More information as to why this is needed: https://github.com/zegervdv/homebrew-zathura/issues/19
+    EOS
   end
 
   test do

@@ -35,6 +35,18 @@ class ZathuraPdfPoppler < Formula
     # mv "#{Formula['zathura'].prefix}/lib/zathura/pdf.dylib", "#{Formula['zathura'].prefix}/lib/zathura/pdf.so"
   end
 
+  def caveats
+    <<-EOS.undent
+      To enable this plugin you will need to link it in place.
+      First create the plugin directory if it does not exist yet:
+        $ mkdir -p $(brew --prefix zathura)/lib/zathura
+      Then link the .dylib to the directory:
+        $ ln -s $(brew --prefix zathura-pdf-poppler)/lib/pdf.dylib $(brew --prefix zathura)/lib/zathura/pdf.so
+
+      More information as to why this is needed: https://github.com/zegervdv/homebrew-zathura/issues/19
+    EOS
+  end
+
   test do
     # `test do` will create, run in and delete a temporary directory.
     #
