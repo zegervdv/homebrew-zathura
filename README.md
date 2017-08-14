@@ -11,6 +11,11 @@ Install zathura and required plugins
 brew install zathura
 brew install zathura-pdf-poppler
 ```
+Follow the instructions to link the plugins into place:
+```
+$ mkdir -p $(brew --prefix zathura)/lib/zathura
+$ ln -s $(brew --prefix zathura-pdf-poppler)/lib/pdf.dylib $(brew --prefix zathura)/lib/zathura/pdf.so
+```
 
 ### Copying to clipboard
 Add the following to your `~/.config/zathura/zathurarc`:
