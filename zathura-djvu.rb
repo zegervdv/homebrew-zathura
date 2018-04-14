@@ -33,7 +33,7 @@ class ZathuraDjvu < Formula
   end
 
   def caveats
-    <<-EOS.undent
+    <<-EOS
       To enable this plugin you will need to link it in place.
       First create the plugin directory if it does not exist yet:
         $ mkdir -p $(brew --prefix zathura)/lib/zathura
