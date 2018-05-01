@@ -4,25 +4,33 @@
 
 class Girara < Formula
   homepage "https://pwmt.org/projects/girara/"
-  url "https://pwmt.org/projects/girara/download/girara-0.2.7.tar.gz"
-  sha256 "98e6a343298ae46869c990bc6e0732555e19af2e386cdc1a911f109b1c5c32e5"
-  version "0.2.7"
+  url "https://pwmt.org/projects/girara/download/girara-0.2.9.tar.xz"
+  sha256 "a81f3e94c71a2ff92bf52295b402ede8175f82fbad1a27f29c1c05a4accb7d52"
+  version "0.2.9"
 
   # depends_on "cmake" => :build
   depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on 'pkg-config'
   depends_on 'gtk+3'
   depends_on 'gettext'
+  depends_on 'meson'
+  depends_on 'libnotify'
+
+  patch :p0 do
+    url 'https://github.com/zegervdv/homebrew-zathura/raw/master/girara-meson.patch'
+    sha256 '1b7c370f2471ec522746f33309bcba28dae43df1c384d1a613e8819c1c8d148f'
+  end
 
   def install
     inreplace "girara/utils.c" do |s|
       s.gsub! /xdg-open/, "open"
     end
     # Set HOMBREW_PREFIX
-    ENV['PREFIX'] = prefix
+    ENV['CMAKE_INSTALL_PREFIX'] = prefix
 
-    system "make"
-    system "make install"
+    system "mkdir build"
+    system "meson build --prefix #{prefix}"
+    system "cd build && ninja && ninja install"
   end
 
   test do
