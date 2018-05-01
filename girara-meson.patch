@@ -1,0 +1,11 @@
+--- girara-0.2.9/meson.build	2018-03-16 01:27:50.000000000 +0100
++++ ../girara-0.2.9/meson.build	2018-05-01 11:39:39.000000000 +0200
+@@ -30,7 +30,7 @@
+ localedir = get_option('localedir')
+ 
+ # required dependencies
+-libm = cc.find_library('libm')
++libm = cc.find_library('m')
+ glib = dependency('glib-2.0', version: '>=2.50')
+ gtk3 = dependency('gtk+-3.0', version: '>=3.20')
+ 
