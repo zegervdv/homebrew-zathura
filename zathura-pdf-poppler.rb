@@ -4,9 +4,9 @@
 
 class ZathuraPdfPoppler < Formula
   homepage "https://pwmt.org/projects/zathura-pdf-poppler/"
-  url "https://pwmt.org/projects/zathura-pdf-poppler/download/zathura-pdf-poppler-0.2.7.tar.gz"
-  version "0.2.7"
-  sha256 "985e4e4dce6143fdfd246e78b0ccbef0d32b8809c6a4f08bb53a2f7dfbd383c0"
+  url "https://pwmt.org/projects/zathura-pdf-poppler/download/zathura-pdf-poppler-0.2.9.tar.xz"
+  version "0.2.9"
+  sha256 "be0806116ea6e6c95495f5e244e0d70d2551a9058e5574b47d3e5a09bc6592dc"
 
   depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on 'zathura'
@@ -25,11 +25,10 @@ class ZathuraPdfPoppler < Formula
   # end
 
   def install
-    inreplace "Makefile", /\$\{PREFIX\}\/bin\/zathura/, "#{Formula['zathura'].prefix}/bin/zathura"
-    ENV['PREFIX'] = prefix
-    ENV['PLUGINDIR'] = lib
-    system "make"
-    system "make install"
+    inreplace "meson.build", "zathura.get_pkgconfig_variable('plugindir')", "prefix"
+    system "mkdir build"
+    system "meson build --prefix #{prefix}"
+    system "cd build && ninja && ninja install"
 
     # Rename pdf.dylib to pdf.so to make it work
     # mv "#{Formula['zathura'].prefix}/lib/zathura/pdf.dylib", "#{Formula['zathura'].prefix}/lib/zathura/pdf.so"
@@ -41,7 +40,7 @@ class ZathuraPdfPoppler < Formula
       First create the plugin directory if it does not exist yet:
         $ mkdir -p $(brew --prefix zathura)/lib/zathura
       Then link the .dylib to the directory:
-        $ ln -s $(brew --prefix zathura-pdf-poppler)/lib/pdf.dylib $(brew --prefix zathura)/lib/zathura/pdf.so
+        $ ln -s $(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib $(brew --prefix zathura)/lib/zathura/libpdf-poppler.dylib
 
       More information as to why this is needed: https://github.com/zegervdv/homebrew-zathura/issues/19
     EOS
