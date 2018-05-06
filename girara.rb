@@ -16,15 +16,11 @@ class Girara < Formula
   depends_on 'meson'
   depends_on 'libnotify'
 
-  patch :p0 do
-    url 'https://github.com/zegervdv/homebrew-zathura/raw/master/girara-meson.patch'
-    sha256 '1b7c370f2471ec522746f33309bcba28dae43df1c384d1a613e8819c1c8d148f'
-  end
-
   def install
     inreplace "girara/utils.c" do |s|
       s.gsub! /xdg-open/, "open"
     end
+    inreplace "meson.build", /'libm'/, "m"
     # Set HOMBREW_PREFIX
     ENV['CMAKE_INSTALL_PREFIX'] = prefix
 

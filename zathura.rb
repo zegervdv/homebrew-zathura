@@ -22,19 +22,10 @@ class Zathura < Formula
   depends_on "meson" => :head
   depends_on "synctex" => :optional
 
-  # patch :p0 do
-  #   url 'https://github.com/zegervdv/homebrew-zathura/raw/1efa3c89cd454cac88729c7334f9ee46e254b299/zathura.h.patch'
-  #   sha256 '07c3948280cbe4f757c6c86761845a637092a4e433f53be28362bec3f7fe4237'
-  # end
-
-  patch :p0 do
-    url 'https://github.com/zegervdv/homebrew-zathura/raw/master/zathura-meson.patch'
-    sha256 'e63a5cd92e3e4a6aa735714032fe1f7a12a513286f91d162670d09f930aea60c'
-  end
-
   def install
     # Set Homebrew prefix
     ENV['PREFIX'] = prefix
+    inreplace "meson.build", /'libm'/, "m"
     system 'mkdir build'
     system "meson build --prefix #{prefix}"
     system "cd build && ninja && ninja install"
