@@ -25,7 +25,7 @@ class Zathura < Formula
   def install
     # Set Homebrew prefix
     ENV['PREFIX'] = prefix
-    inreplace "meson.build", /'libm'/, "m"
+    inreplace "meson.build", /'libm'/, "'m'"
     system 'mkdir build'
     system "meson build --prefix #{prefix}"
     system "cd build && ninja && ninja install"

@@ -20,7 +20,7 @@ class Girara < Formula
     inreplace "girara/utils.c" do |s|
       s.gsub! /xdg-open/, "open"
     end
-    inreplace "meson.build", /'libm'/, "m"
+    inreplace "meson.build", /'libm'/, "'m'"
     # Set HOMBREW_PREFIX
     ENV['CMAKE_INSTALL_PREFIX'] = prefix
 
