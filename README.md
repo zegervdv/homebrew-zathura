@@ -6,7 +6,8 @@ Homebrew formulae to install zathura and plugins on Mac OS X
 Tap the repository:
 ```brew tap zegervdv/zathura```
 
-** Before installing **
+__Before installing__
+
 Install the latest `meson` package from `HEAD`:
 ```
 $ brew install --HEAD meson
