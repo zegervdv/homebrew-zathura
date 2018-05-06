@@ -3,33 +3,22 @@
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 
 class ZathuraDjvu < Formula
-  desc ""
-  homepage ""
-  url "https://pwmt.org/projects/zathura-djvu/download/zathura-djvu-0.2.6.tar.gz"
-  sha256 "aefef6a3b702fa06145f16f2559490f4d96d3206bafd4e0c78ac184788cac05f"
+  desc "Zathura DJVU plugin"
+  homepage "https://pwmt.org/projects/zathura-djvu/"
+  url "https://pwmt.org/projects/zathura-djvu/download/zathura-djvu-0.2.8.tar.xz"
+  sha256 "d0e664d5312bdc0674fdf8cc6e259c9ee1365714172bc809f9c0f69659d8b32b"
+  version "0.2.8"
 
   depends_on :x11
   depends_on 'zathura'
   depends_on 'djvulibre'
   depends_on 'pkg-config'
 
-  patch :p1 do
-    url 'https://github.com/zegervdv/homebrew-zathura/raw/master/zathura-djvu-patch-Makefile.diff'
-    sha256 'e26dbf219c58e1d3537ac2a478b0275ea4d50b9ccea05005d93f297f901da751'
-  end
-
-  patch :p1 do
-    url 'https://github.com/zegervdv/homebrew-zathura/raw/master/zathura-djvu-patch-config.mk.diff'
-    sha256 '1528cf683de8c6af2425c9f1ec062acfddd5e558f8017a4c50f679e09aaac0c8'
-  end
-
   def install
-    # Current prefix is not the zathura prefix
-    # Replace it in the makefile
-    inreplace "Makefile", /\$\{PREFIX\}\/bin\/zathura/, "#{Formula['zathura'].prefix}/bin/zathura"
-    ENV['PREFIX'] = prefix
-    ENV['PLUGINDIR'] = lib
-    system "make", "install" # if this fails, try separate make/make install steps
+    inreplace "meson.build", "zathura.get_pkgconfig_variable('plugindir')", "'#{prefix}'"
+    system "mkdir build"
+    system "meson build --datadir #{prefix}"
+    system "cd build && ninja && ninja install"
   end
 
   def caveats
@@ -38,7 +27,7 @@ class ZathuraDjvu < Formula
       First create the plugin directory if it does not exist yet:
         $ mkdir -p $(brew --prefix zathura)/lib/zathura
       Then link the .dylib to the directory:
-        $ ln -s $(brew --prefix zathura-djvu)/lib/djvu.dylib $(brew --prefix zathura)/lib/zathura/djvu.so
+        $ ln -s $(brew --prefix zathura-djvu)/libdjvu.dylib $(brew --prefix zathura)/lib/zathura/libdjvu.dylib
 
       More information as to why this is needed: https://github.com/zegervdv/homebrew-zathura/issues/19
     EOS
