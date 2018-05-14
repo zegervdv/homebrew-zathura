@@ -4,8 +4,10 @@ class Synctex < Formula
   version "1.18.0"
   sha256 "c643ee9c96b930fdba601814a381557521926b7373336f139d924c3e28a8e5fa"
 
+  depends_on 'zlib'
+
   def install
-    system "gcc -D__SYNCTEX_WORK__ -Wall -I. -lz -shared synctex_parser.c synctex_parser_utils.c -o libsynctex.dylib"
+    system "gcc -Wall -I. -lz -shared synctex_parser.c synctex_parser_utils.c -o libsynctex.dylib"
     lib.install "libsynctex.dylib"
     mkdir "#{include}/synctex"
     cp "synctex_parser.h", "#{include}/synctex/"
