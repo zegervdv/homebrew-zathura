@@ -4,7 +4,7 @@
 
 class Girara < Formula
   homepage "https://pwmt.org/projects/girara/"
-  url "https://pwmt.org/projects/girara/download/girara-0.2.9.tar.xz"
+  url "https://github.com/pwmt/girara"
   sha256 "a81f3e94c71a2ff92bf52295b402ede8175f82fbad1a27f29c1c05a4accb7d52"
   version "0.2.9"
 
