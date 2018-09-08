@@ -5,8 +5,8 @@
 class ZathuraDjvu < Formula
   desc "Zathura DJVU plugin"
   homepage "https://pwmt.org/projects/zathura-djvu/"
-  url "https://pwmt.org/projects/zathura-djvu/download/zathura-djvu-0.2.8.tar.xz"
-  sha256 "d0e664d5312bdc0674fdf8cc6e259c9ee1365714172bc809f9c0f69659d8b32b"
+  url "https://github.com/pwmt/zathura-djvu/archive/0.2.8.tar.gz"
+  sha256 "58325958b5aecc4f7cd8281b564aadeea151fafd1de84e4fa269932f96a3a776"
   version "0.2.8"
 
   depends_on :x11

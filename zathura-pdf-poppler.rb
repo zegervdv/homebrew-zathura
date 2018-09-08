@@ -4,9 +4,9 @@
 
 class ZathuraPdfPoppler < Formula
   homepage "https://pwmt.org/projects/zathura-pdf-poppler/"
-  url "https://pwmt.org/projects/zathura-pdf-poppler/download/zathura-pdf-poppler-0.2.9.tar.xz"
+  url "https://github.com/pwmt/zathura-pdf-poppler/archive/0.2.9.tar.gz"
   version "0.2.9"
-  sha256 "be0806116ea6e6c95495f5e244e0d70d2551a9058e5574b47d3e5a09bc6592dc"
+  sha256 "34c5eb25f56cd01a3302d4bc8eb0b23e026e065d017405f3f2a30a02b9cd2530"
 
   depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on 'zathura'

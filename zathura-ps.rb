@@ -4,9 +4,9 @@
 
 class ZathuraPs < Formula
   homepage "https://pwmt.org/projects/zathura-ps/"
-  url "https://pwmt.org/projects/zathura-ps/download/zathura-ps-0.2.6.tar.xz"
+  url "https://github.com/pwmt/zathura-ps/archive/0.2.6.tar.gz"
   version "0.2.6"
-  sha256 "7eb085b41fc88979f997310b4e703455e6a81b6ef1ae7db0b6324b6f13c2cf73"
+  sha256 "08c1927bfb8a40e201fa3638f9523d4b6d70e3444ef070bd4aa8a869b6574567"
 
   depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on 'zathura'
