@@ -27,7 +27,7 @@ class ZathuraPdfMupdf < Formula
       First create the plugin directory if it does not exist yet:
         $ mkdir -p $(brew --prefix zathura)/lib/zathura
       Then link the .dylib to the directory:
-        $ ln -s $(brew --prefix zathura-pdf-mudpf)/libpdf-mupdf.dylib $(brew --prefix zathura)/lib/zathura/libpdf-mupdf.dylib
+        $ ln -s $(brew --prefix zathura-pdf-mupdf)/libpdf-mupdf.dylib $(brew --prefix zathura)/lib/zathura/libpdf-mupdf.dylib
 
       More information as to why this is needed: https://github.com/zegervdv/homebrew-zathura/issues/19
     EOS
