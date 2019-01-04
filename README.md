@@ -8,11 +8,6 @@ Tap the repository:
 
 __Before installing__
 
-Install the latest `meson` package from `HEAD`:
-```
-$ brew install --HEAD meson
-```
-A bug in the latest stable version was fixed but has not been released yet.
 
 Install zathura and required plugins
 ```
