@@ -4,9 +4,9 @@
 
 class Girara < Formula
   homepage "https://pwmt.org/projects/girara/"
-  url "https://github.com/pwmt/girara/archive/0.3.1.tar.gz"
-  sha256 "7f6db861fee96e9b7062d007125bfb31771ab83d9541350d738b6439acb9b3e0"
-  version "0.3.1"
+  url "https://github.com/pwmt/girara/archive/0.3.2.tar.gz"
+  sha256 "bda025069e9fb056b6d8e5b2d8b029082abeda080b82bd937dd0dccf5ef36e57"
+  version "0.3.2"
 
   # depends_on "cmake" => :build
   depends_on :x11 # if your formula requires any X11/XQuartz components
@@ -20,7 +20,6 @@ class Girara < Formula
     inreplace "girara/utils.c" do |s|
       s.gsub! /xdg-open/, "open"
     end
-    inreplace "meson.build", /'libm'/, "'m'"
     # Set HOMBREW_PREFIX
     ENV['CMAKE_INSTALL_PREFIX'] = prefix
 

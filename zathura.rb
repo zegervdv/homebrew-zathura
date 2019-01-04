@@ -4,9 +4,9 @@
 
 class Zathura < Formula
   homepage "https://pwmt.org/projects/zathura/"
-  url "https://github.com/pwmt/zathura/archive/0.4.1.tar.gz"
-  version "0.4.1"
-  sha256 "a659042c64f65188d5806b8ed4109e6ec5c582836c099c437333b85b06f2eb4c"
+  url "https://github.com/pwmt/zathura/archive/0.4.3.tar.gz"
+  version "0.4.3"
+  sha256 "4be4233335c1e8be009c70fa5b5a8ecd5a651fc742d1574b37d6266dc1e20dad"
 
   # depends_on "cmake" => :build
   depends_on :x11 # if your formula requires any X11/XQuartz components
@@ -25,7 +25,6 @@ class Zathura < Formula
   def install
     # Set Homebrew prefix
     ENV['PREFIX'] = prefix
-    inreplace "meson.build", /'libm'/, "'m'"
     system 'mkdir build'
     system "meson build --prefix #{prefix}"
     system "cd build && ninja && ninja install"
