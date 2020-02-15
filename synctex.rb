@@ -1,8 +1,7 @@
 class Synctex < Formula
-  homepage "https://github.com/barracks510/synctexdir"
-  url "https://github.com/barracks510/synctexdir/archive/master.zip"
-  version "1.18.0"
-  sha256 "c643ee9c96b930fdba601814a381557521926b7373336f139d924c3e28a8e5fa"
+  homepage "https://github.com/jlaurens/synctex"
+  url "https://github.com/jlaurens/synctex", :using => :git, :revision => "04371f6aff29deeb3bebff063961e2052d0d1b03", :branch => "2017"
+  version "1.21.0"
 
   depends_on 'zlib'
 
@@ -12,15 +11,19 @@ class Synctex < Formula
     mkdir "#{include}/synctex"
     cp "synctex_parser.h", "#{include}/synctex/"
     cp "synctex_parser_utils.h", "#{include}/synctex/"
-    # cp "synctex_version.h", "#{include}/synctex/"
-  
-    # Install pkgconfig
-    inreplace "synctex.pc.in" do |s|
-      s.gsub! "@prefix@", prefix
-      s.gsub! "@exec_prefix@", prefix
-      s.gsub! "@libdir@", lib
-      s.gsub! "@includedir@", include
-      s.gsub! "@SYNCTEXVERSION@", "1.18.0"
+
+    open("synctex.pc.in", "w") do |file|
+      file.puts "prefix=#{prefix}
+exec_prefix=#{prefix}
+libdir=#{lib}
+includedir=#{include}
+
+Name: synctex
+Description: SyncTeX parser library
+Version: 1.21.0
+Requires.private: zlib
+Libs: -L${libdir} -lsynctex
+Cflags: -I${includedir}/synctex"
     end
 
     mkdir "#{lib}/pkgconfig"
