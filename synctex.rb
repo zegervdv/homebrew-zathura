@@ -2,6 +2,7 @@ class Synctex < Formula
   homepage "https://github.com/jlaurens/synctex"
   url "https://github.com/jlaurens/synctex", :using => :git, :revision => "04371f6aff29deeb3bebff063961e2052d0d1b03", :branch => "2017"
   version "1.21.0"
+  revision 1
 
   depends_on 'zlib'
 
@@ -11,6 +12,7 @@ class Synctex < Formula
     mkdir "#{include}/synctex"
     cp "synctex_parser.h", "#{include}/synctex/"
     cp "synctex_parser_utils.h", "#{include}/synctex/"
+    cp "synctex_version.h", "#{include}/synctex/"
 
     open("synctex.pc.in", "w") do |file|
       file.puts "prefix=#{prefix}
