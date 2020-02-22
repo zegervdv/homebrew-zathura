@@ -4,9 +4,9 @@
 
 class ZathuraPdfMupdf < Formula
   homepage "https://pwmt.org/projects/zathura-pdf-mupdf/"
-  url "https://github.com/pwmt/zathura-pdf-mupdf/archive/0.3.4.tar.gz"
-  version "0.3.4"
-  sha256 "16417f3d259322ea7e6ec7106d519f5750f67079ff6b18fa879e75c1ded6f95e"
+  url "https://github.com/pwmt/zathura-pdf-mupdf/archive/0.3.5.tar.gz"
+  version "0.3.5"
+  sha256 "6344acda225ca637fc72788cacce7448cd2e69ac13f19429726786a0b62cd7e3"
 
   depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on 'zathura'
