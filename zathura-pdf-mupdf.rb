@@ -8,7 +8,6 @@ class ZathuraPdfMupdf < Formula
   version "0.3.5"
   sha256 "6344acda225ca637fc72788cacce7448cd2e69ac13f19429726786a0b62cd7e3"
 
-  depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on 'zathura'
   depends_on 'mupdf'
   depends_on 'pkg-config'

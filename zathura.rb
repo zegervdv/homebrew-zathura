@@ -4,12 +4,10 @@
 
 class Zathura < Formula
   homepage "https://pwmt.org/projects/zathura/"
-  url "https://github.com/pwmt/zathura/archive/0.4.4.tar.gz"
-  version "0.4.4"
-  sha256 "ebc98478fd8ec412b8f87c6b75067cf52d89d200731c1848ec3a2700f2a3b36c"
+  url "https://github.com/pwmt/zathura/archive/0.4.5.tar.gz"
+  version "0.4.5"
+  sha256 "317882fc4e05104591c011c237b2ba6bf0b3978c189f5cdf3c978cb333ee04fe"
 
-  # depends_on "cmake" => :build
-  depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on 'pkg-config'
   depends_on "libmagic"
   depends_on "gettext"
