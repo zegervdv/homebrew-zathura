@@ -1,7 +1,7 @@
 class Synctex < Formula
   homepage "https://github.com/jlaurens/synctex"
-  url "https://github.com/jlaurens/synctex", :using => :git, :revision => "04371f6aff29deeb3bebff063961e2052d0d1b03", :branch => "2017"
-  version "1.21.0"
+  url "https://github.com/jlaurens/synctex", :using => :git, :revision => "a256d4835b7df2a0472cfa3d557af73a1b83f076", :branch => "2020"
+  version "1.22.0"
   revision 1
 
   depends_on 'zlib'
