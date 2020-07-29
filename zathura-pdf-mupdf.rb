@@ -9,7 +9,7 @@ class ZathuraPdfMupdf < Formula
   sha256 "6344acda225ca637fc72788cacce7448cd2e69ac13f19429726786a0b62cd7e3"
 
   depends_on 'zathura'
-  depends_on 'mupdf'
+  depends_on 'zathura-mupdf'
   depends_on 'pkg-config'
 
   def install
