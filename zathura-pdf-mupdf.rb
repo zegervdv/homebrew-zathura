@@ -7,9 +7,11 @@ class ZathuraPdfMupdf < Formula
   url "https://github.com/pwmt/zathura-pdf-mupdf/archive/0.3.6.tar.gz"
   version "0.3.6"
   sha256 "94ab90b367c04e3a9dda52e3587e257e4c825b375bde13032f81b1f84becb4f1"
+  revision 1
+  
 
   depends_on 'zathura'
-  depends_on 'zathura-mupdf'
+  depends_on 'mupdf'
   depends_on 'pkg-config'
 
   def install
