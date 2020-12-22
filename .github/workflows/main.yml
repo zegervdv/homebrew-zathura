@@ -30,7 +30,7 @@ jobs:
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
           eval "$($(brew --prefix)/bin/brew shellenv)"
           brew tap zegervdv/zathura
-          brew install --force-overwrite python
+          brew install python
 
       - name: install zathura
         run: |
