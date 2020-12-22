@@ -31,4 +31,5 @@ jobs:
       - name: install zathura
         run: |
           eval "$($(brew --prefix)/bin/brew shellenv)"
-          brew install ./zathura.rb
+          brew tap zegervdv/zathura
+          brew install zathura
