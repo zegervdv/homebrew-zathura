@@ -8,7 +8,6 @@ class ZathuraPs < Formula
   version "0.2.6"
   sha256 "08c1927bfb8a40e201fa3638f9523d4b6d70e3444ef070bd4aa8a869b6574567"
 
-  depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on 'zathura'
   depends_on 'libspectre'
 

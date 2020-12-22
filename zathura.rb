@@ -19,7 +19,6 @@ class Zathura < Formula
   depends_on "sphinx-doc"
   depends_on "meson" => :head
   depends_on "synctex" => :optional
-  depends_on "gtk-mac-integration"
 
   def install
     # Set Homebrew prefix

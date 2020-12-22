@@ -11,7 +11,6 @@ class Girara < Formula
   # depends_on "cmake" => :build
   depends_on 'pkg-config'
   depends_on 'gtk+3'
-  depends_on 'gtk-mac-integration'
   depends_on 'gettext'
   depends_on 'meson'
   depends_on 'libnotify'
