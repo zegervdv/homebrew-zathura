@@ -5,6 +5,7 @@
 class Girara < Formula
   homepage "https://pwmt.org/projects/girara/"
   url "https://github.com/pwmt/girara/archive/0.3.5.tar.gz"
+  head "https://git.pwmt.org/pwmt/girara.git", branch: "develop"
   sha256 "ce6bc8cb95ec886dc01c6ce8ea8ccf1d17db523d78dec1aa380115b2804971d8"
   version "0.3.5"
 
