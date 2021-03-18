@@ -2,26 +2,35 @@
 
 Homebrew formulae to install zathura and plugins on Mac OS X
 
-## Installation
-Tap the repository:
-```brew tap zegervdv/zathura```
+## Installation steps
 
-__Before installing__
+### Tap the repository
+```
+brew tap zegervdv/zathura
+```
 
-
-Install zathura and required plugins
+### Install zathura
 ```
 brew install zathura
-brew install zathura-pdf-poppler
 ```
-Follow the instructions to link the plugins into place:
+
+### Install and link one of the two plugins
+
+For poppler:
 ```
+$ brew install zathura-pdf-poppler
 $ mkdir -p $(brew --prefix zathura)/lib/zathura
 $ ln -s $(brew --prefix zathura-pdf-poppler)/libpdf-poppler.dylib $(brew --prefix zathura)/lib/zathura/libpdf-poppler.dylib
 ```
 
+For mupdf:
+```
+$ brew install zathura-pdf-mupdf
+$ mkdir -p $(brew --prefix zathura)/lib/zathura
+$ ln -s $(brew --prefix zathura-pdf-mupdf)/libpdf-mupdf.dylib $(brew --prefix zathura)/lib/zathura/libpdf-mupdf.dylib
+```
 
-__OSX_native_integration__
+### OSX_native_integration
 
 The OSX native integration (dock, window manager) has been added to the develop branch of zathura.
 You can install it by
