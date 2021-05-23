@@ -20,7 +20,9 @@ class Zathura < Formula
   depends_on "sphinx-doc"
   depends_on "meson"
   depends_on "synctex" => :optional
-  depends_on "gtk-mac-integration"
+  on_macos do
+    depends_on "gtk-mac-integration"
+  end
 
 
   def install
