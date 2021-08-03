@@ -4,10 +4,10 @@
 
 class Girara < Formula
   homepage "https://pwmt.org/projects/girara/"
-  url "https://github.com/pwmt/girara/archive/0.3.5.tar.gz"
+  url "https://github.com/pwmt/girara/archive/0.3.6.tar.gz"
   head "https://git.pwmt.org/pwmt/girara.git", branch: "develop"
-  sha256 "ce6bc8cb95ec886dc01c6ce8ea8ccf1d17db523d78dec1aa380115b2804971d8"
-  version "0.3.5"
+  sha256 "18f1028f4095c4a87e8137c0924becd77b5d8b2f778a5f7b8aa6d24f12d04a23"
+  version "0.3.6"
 
   # depends_on "cmake" => :build
   depends_on 'pkg-config'
