@@ -4,10 +4,10 @@
 
 class Zathura < Formula
   homepage "https://pwmt.org/projects/zathura/"
-  url "https://github.com/pwmt/zathura/archive/0.4.7.tar.gz"
+  url "https://github.com/pwmt/zathura/archive/0.4.8.tar.gz"
   head "https://git.pwmt.org/pwmt/zathura.git", branch: "develop"
-  version "0.4.7"
-  sha256 "dbea0d5c42bfb813640af2587edbf04a93e6e87232f429e09845e5a9d0049ffb"
+  version "0.4.8"
+  sha256 "7b53921a90ff29319588f604575348ef78fa55816d866bbdf7687a8972536c8f"
 
   depends_on 'pkg-config'
   depends_on "libmagic"
