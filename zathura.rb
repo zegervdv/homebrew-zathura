@@ -7,6 +7,7 @@ class Zathura < Formula
   url "https://github.com/pwmt/zathura/archive/0.4.8.tar.gz"
   head "https://git.pwmt.org/pwmt/zathura.git", branch: "develop"
   version "0.4.8"
+  revision 0
   sha256 "7b53921a90ff29319588f604575348ef78fa55816d866bbdf7687a8972536c8f"
 
   depends_on 'pkg-config'
@@ -37,6 +38,17 @@ class Zathura < Formula
     system 'mkdir build'
     system "meson build --prefix #{prefix}"
     system "cd build && ninja && ninja install"
+  end
+
+  def caveats
+    <<-EOS
+      To work around a visual issue in macOS Monterey, you need to use a patched version
+      of GTK+3. You can install the patched version via:
+        $ brew uninstall gtk+3 --ignore-dependencies
+        $ brew install ttarhan/gtk-fix/gtk+3
+      And re-install zathura if needed.
+      See https://github.com/zegervdv/homebrew-zathura/issues/83 for more details.
+    EOS
   end
 
   test do
