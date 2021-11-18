@@ -40,17 +40,6 @@ class Zathura < Formula
     system "cd build && ninja && ninja install"
   end
 
-  def caveats
-    <<-EOS
-      To work around a visual issue in macOS Monterey, you need to use a patched version
-      of GTK+3. You can install the patched version via:
-        $ brew uninstall gtk+3 --ignore-dependencies
-        $ brew install ttarhan/gtk-fix/gtk+3
-      And re-install zathura if needed.
-      See https://github.com/zegervdv/homebrew-zathura/issues/83 for more details.
-    EOS
-  end
-
   test do
     # `test do` will create, run in and delete a temporary directory.
     #
