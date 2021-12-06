@@ -5,7 +5,7 @@
 class Zathura < Formula
   homepage "https://pwmt.org/projects/zathura/"
   url "https://github.com/pwmt/zathura/archive/0.4.8.tar.gz"
-  head "https://git.pwmt.org/pwmt/zathura.git", branch: "develop"
+  head "https://github.com/pwmt/zathura.git", branch: "develop"
   version "0.4.8"
   revision 0
   sha256 "7b53921a90ff29319588f604575348ef78fa55816d866bbdf7687a8972536c8f"
