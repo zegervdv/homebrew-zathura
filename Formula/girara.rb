@@ -1,8 +1,8 @@
 class Girara < Formula
   desc "Interface library"
   homepage "https://pwmt.org/projects/girara/"
-  url "https://github.com/pwmt/girara/archive/0.3.6.tar.gz"
-  sha256 "18f1028f4095c4a87e8137c0924becd77b5d8b2f778a5f7b8aa6d24f12d04a23"
+  url "https://github.com/pwmt/girara/archive/0.3.7.tar.gz"
+  sha256 "41342213f8e745258f1db28cbb6ccc27a63009a5e001bf791bbe01ce436d4db7"
   head "https://github.com/pwmt/girara.git", branch: "develop"
 
   depends_on "cmake" => :build
