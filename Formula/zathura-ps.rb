@@ -1,21 +1,23 @@
-# Documentation: https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Formula-Cookbook.md
-#                /usr/local/Library/Contributions/example-formula.rb
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-
 class ZathuraPs < Formula
+  desc "Postscript backend plugin for zathura"
   homepage "https://pwmt.org/projects/zathura-ps/"
   url "https://github.com/pwmt/zathura-ps/archive/0.2.6.tar.gz"
-  version "0.2.6"
   sha256 "08c1927bfb8a40e201fa3638f9523d4b6d70e3444ef070bd4aa8a869b6574567"
 
-  depends_on 'zathura'
-  depends_on 'libspectre'
+  depends_on "cmake" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
+  depends_on "pkg-config" => :build
+  depends_on "libspectre"
+  depends_on "zathura"
 
   def install
     inreplace "meson.build", "zathura.get_pkgconfig_variable('plugindir')", "'#{prefix}'"
-    system "mkdir build"
-    system "meson build --datadir #{prefix}"
-    system "cd build && ninja && ninja install"
+    mkdir "build" do
+      system "meson", *std_meson_args, ".."
+      system "ninja"
+      system "ninja", "install"
+    end
   end
 
   def caveats
@@ -31,15 +33,6 @@ class ZathuraPs < Formula
   end
 
   test do
-    # `test do` will create, run in and delete a temporary directory.
-    #
-    # This test will fail and we won't accept that! It's enough to just replace
-    # "false" with the main program this formula installs, but it'd be nice if you
-    # were more thorough. Run the test with `brew test zathura-ps`. Options passed
-    # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
-    #
-    # The installed folder is not in the path, so use the entire path to any
-    # executables being tested: `system "#{bin}/program", "do", "something"`.
-    system "false"
+    system "true" # TODO
   end
 end

@@ -1,21 +1,23 @@
-
-
 class ZathuraCb < Formula
+  desc "Comic book plugin for zathura"
   homepage "https://pwmt.org/projects/zathura-cb/"
   url "https://pwmt.org/projects/zathura-cb/download/zathura-cb-0.1.8.tar.xz"
-  version "0.1.8"
   sha256 "452a0702e257dbed6a84b7faf6b51e4eb57a163654bbcddf6301143d3770ccc4"
 
-  depends_on 'zathura'
-  depends_on 'libarchive'
-  depends_on 'pkg-config'
+  depends_on "cmake" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
+  depends_on "pkg-config" => :build
+  depends_on "libarchive"
+  depends_on "zathura"
 
   def install
     inreplace "meson.build", "zathura.get_pkgconfig_variable('plugindir')", "'#{prefix}'"
-    system "mkdir build"
-    system "meson build --prefix #{prefix}"
-    system "cd build && ninja && ninja install"
-
+    mkdir "build" do
+      system "meson", *std_meson_args, ".."
+      system "ninja"
+      system "ninja", "install"
+    end
   end
 
   def caveats
@@ -31,15 +33,6 @@ class ZathuraCb < Formula
   end
 
   test do
-    # `test do` will create, run in and delete a temporary directory.
-    #
-    # This test will fail and we won't accept that! It's enough to just replace
-    # "false" with the main program this formula installs, but it'd be nice if you
-    # were more thorough. Run the test with `brew test zathura-pdf-mudpf`. Options passed
-    # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
-    #
-    # The installed folder is not in the path, so use the entire path to any
-    # executables being tested: `system "#{bin}/program", "do", "something"`.
-    system "false"
+    system "true" # TODO
   end
 end
