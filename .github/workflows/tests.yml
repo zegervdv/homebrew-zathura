@@ -2,7 +2,7 @@ name: brew test-bot
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
 jobs:
   test-bot:
@@ -38,7 +38,7 @@ jobs:
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@master
         with:
           name: bottles
-          path: '*.bottle.*'
+          path: "*.bottle.*"
