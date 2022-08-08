@@ -5,6 +5,12 @@ class Synctex < Formula
   version "1.22.0"
   revision 2
 
+  bottle do
+    root_url "https://github.com/zegervdv/homebrew-zathura/releases/download/synctex-1.22.0_2"
+    sha256 cellar: :any,                 big_sur:      "28ecec53683b7cc5bb5686705f8ab9f07517fa790527625c792094a51d4e0b25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "aaa344cbb93e7794e72da4f97c492a7a89dadc533dbd9639672512aa5d94c9a4"
+  end
+
   depends_on "zlib"
 
   def install
