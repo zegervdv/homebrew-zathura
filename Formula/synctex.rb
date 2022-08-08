@@ -3,7 +3,7 @@ class Synctex < Formula
   homepage "https://github.com/jlaurens/synctex"
   url "https://github.com/jlaurens/synctex", using: :git, revision: "a256d4835b7df2a0472cfa3d557af73a1b83f076", branch: "2020"
   version "1.22.0"
-  revision 1
+  revision 2
 
   depends_on "zlib"
 
