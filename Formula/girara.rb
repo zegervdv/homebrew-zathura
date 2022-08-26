@@ -17,6 +17,7 @@ class Girara < Formula
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "gtk+3"
+  depends_on "json-c"
   depends_on "libnotify"
 
   def install
