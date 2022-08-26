@@ -7,8 +7,9 @@ class Girara < Formula
 
   bottle do
     root_url "https://github.com/zegervdv/homebrew-zathura/releases/download/girara-0.3.7"
-    sha256 big_sur:      "edcefda742a6b7706e2c38a5fa09a5eb55e598b8f2e3edbe0de45647c1a2ac0f"
-    sha256 x86_64_linux: "a2537e075aa5e0b537bb4bc2efb821580f06766bd8cccefa3d2c0c6e0f96d96a"
+    rebuild 1
+    sha256 big_sur:      "dd498c1ac849e654f69415e9251a4ea829ea42dc083268b1c43c5d471e3d147a"
+    sha256 x86_64_linux: "b0f7fefdc208921c5e9189b5352b6a02a456bd5c315694a0efef85653311c2d1"
   end
 
   depends_on "cmake" => :build
