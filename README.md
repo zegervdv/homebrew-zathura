@@ -53,6 +53,22 @@ set selection-clipboard clipboard
 ```
 Thanks to [geigi](https://github.com/geigi) (see [#5](https://github.com/zegervdv/homebrew-zathura/issues/5))
 
+### Operation not supported error
+
+If you are seeing errors like this:
+```
+error: Can not copy to temporary file: Operation not supported
+```
+
+Try using an absolute path to the document:
+```
+$ zathura document.pdf
+error: Can not copy to temporary file: Operation not supported
+# Try:
+$ zathura /path/to/document.pdf
+
+```
+
 ## Known Issues
 Currently plugins are installed in the zathura folder, which means that uninstalling
 a plugin does not work.
