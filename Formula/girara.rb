@@ -20,6 +20,7 @@ class Girara < Formula
   depends_on "gtk+3"
   depends_on "json-c"
   depends_on "libnotify"
+  depends_on "libpthread-stubs"
 
   def install
     inreplace "girara/utils.c" do |s|
