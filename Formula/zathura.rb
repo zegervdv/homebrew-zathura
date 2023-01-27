@@ -17,6 +17,7 @@ class Zathura < Formula
   depends_on "glib"
   depends_on "intltool"
   depends_on "libmagic"
+  depends_on "sphinx"
   depends_on "sphinx-doc"
   depends_on "synctex" => :optional
   on_macos do
