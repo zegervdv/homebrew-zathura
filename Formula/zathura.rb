@@ -30,7 +30,7 @@ class Zathura < Formula
     # Add the pkgconfig for girara to the PKG_CONFIG_PATH
     # TODO: Find out why it is not added correctly for Linux
     ENV["PKG_CONFIG_PATH"] = "#{ENV["PKG_CONFIG_PATH"]}:#{Formula["girara"].prefix}/lib/x86_64-linux-gnu/pkgconfig"
-    
+
     mkdir "build" do
       system "meson", *std_meson_args, ".."
       system "ninja"
