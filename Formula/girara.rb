@@ -12,7 +12,7 @@ class Girara < Formula
     sha256 x86_64_linux: "e4f555c3f8da92f701a427a11f266722fd68c5ead0dac59b3e49992b37cdf9d3"
   end
 
-  depends_on "cmake" => :build
+  depends_on "cmake" => :build, :install
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
