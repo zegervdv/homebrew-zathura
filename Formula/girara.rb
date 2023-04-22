@@ -1,8 +1,8 @@
 class Girara < Formula
   desc "Interface library"
   homepage "https://pwmt.org/projects/girara/"
-  url "https://github.com/pwmt/girara/archive/0.3.7.tar.gz"
-  sha256 "41342213f8e745258f1db28cbb6ccc27a63009a5e001bf791bbe01ce436d4db7"
+  url "https://github.com/pwmt/girara/archive/0.4.0.tar.gz"
+  sha256 "24edfa3d493e7d4bbf491bb730d036cfedbd6c34ada1a7cfcd6273e78cffa44c"
   head "https://github.com/pwmt/girara.git", branch: "develop"
 
   bottle do
