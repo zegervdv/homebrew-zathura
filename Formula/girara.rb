@@ -5,7 +5,6 @@ class Girara < Formula
   sha256 "24edfa3d493e7d4bbf491bb730d036cfedbd6c34ada1a7cfcd6273e78cffa44c"
   head "https://github.com/pwmt/girara.git", branch: "develop"
 
-
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
