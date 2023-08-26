@@ -10,6 +10,7 @@ class Zathura < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "sphinx-doc" => :build
   depends_on "adwaita-icon-theme"
   depends_on "desktop-file-utils"
   depends_on "gettext"
@@ -17,8 +18,6 @@ class Zathura < Formula
   depends_on "glib"
   depends_on "intltool"
   depends_on "libmagic"
-  depends_on "sphinx"
-  depends_on "sphinx-doc"
   depends_on "synctex" => :optional
   on_macos do
     depends_on "gtk-mac-integration"
