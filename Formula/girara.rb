@@ -12,6 +12,7 @@ class Girara < Formula
   depends_on "gettext"
   depends_on "gtk+3"
   depends_on "json-c"
+  depends_on "json-glib"
   depends_on "libnotify"
   depends_on "libpthread-stubs"
 
