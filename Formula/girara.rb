@@ -5,6 +5,13 @@ class Girara < Formula
   sha256 "24edfa3d493e7d4bbf491bb730d036cfedbd6c34ada1a7cfcd6273e78cffa44c"
   head "https://github.com/pwmt/girara.git", branch: "develop"
 
+  bottle do
+    root_url "https://ghcr.io/v2/zegervdv/zathura"
+    rebuild 1
+    sha256 ventura:      "de3d8697345a2f225cc0ea5b24f78935b8f19062faa847785051d52bea637ea1"
+    sha256 x86_64_linux: "a4d3262b78ef8c778dda19e6e078c9fce68b862b51d44470eca325cf26648b2c"
+  end
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
